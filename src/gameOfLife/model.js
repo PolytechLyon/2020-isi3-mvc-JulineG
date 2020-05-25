@@ -69,6 +69,7 @@ export class Model {
 
   reset() {
     // TODO
+    this.stop();
     this.init();
   }
 
