@@ -4,6 +4,7 @@ import {
   DEFAULT_ALIVE_PAIRS,
   RENDER_INTERVAL
 } from "./constants";
+import {drawGame} from "./view";
 
 export class Model {
   constructor() {
@@ -31,6 +32,12 @@ export class Model {
           for (let j = 0; j < this.width; j++) {
             const nbAlive = this.aliveNeighbours(i, j);
             // TODO implement Game of life logic
+            if(this.isCellAlive(x,y) === 0 && (nbAlive !== 2 || nbAlive !==3)){
+              this.state[y][x] = CELL_STATES.DEAD;
+            }
+            if(this.isCellAlive(x,y) === 1 && nbAlive === 3){
+              this.state[y][x] = CELL_STATES.ALIVE;
+            }
           }
         }
 
@@ -49,6 +56,7 @@ export class Model {
 
   reset() {
     // TODO
+    this.init();
   }
 
   isCellAlive(x, y) {
@@ -63,10 +71,19 @@ export class Model {
   aliveNeighbours(x, y) {
     let number = 0;
     // TODO
+    number += this.isCellAlive(x-1,y);
+    number += this.isCellAlive(x-1,y-1);
+    number += this.isCellAlive(x-1,y+1);
+    number += this.isCellAlive(x+1,y);
+    number += this.isCellAlive(x+1,y-1);
+    number += this.isCellAlive(x+1,y+1);
+    number += this.isCellAlive(x,y-1);
+    number += this.isCellAlive(x,y+-1);
     return number;
   }
 
   updated() {
     // TODO update the view
+    drawGame(this);
   }
 }

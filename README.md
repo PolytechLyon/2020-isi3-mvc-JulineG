@@ -4,7 +4,7 @@
 > **Ne restez pas bloqués bêtement, demander de l'aide**
 > Ne copier pas le code de votre voisin, ça se voit.
 
-Nom/Prénom: `.......`
+Nom/Prénom: Gabrovec Juline
 
 Lien du codesandbox: `.......`
 
@@ -20,13 +20,16 @@ Il est inventé par [John Horton Conway](https://fr.wikipedia.org/wiki/John_Hort
 1. Expliquer le design pattern MVC à l'aide d'un schéma à insérer directement ici. 
 Utiliser un outils commde Dia pour le représenter. Je veux **votre** schéma, pas un de ceux qu'on peut trouver sur le net.
 
+
 2. Expliquer ce pattern à l'aide en complétant ce texte.
 
-Le pattern MVP, vise à découper le `.......`, de la `.......` et du `.......` afin de rendre le code plus `.......`.
-Les responsabilités ne sont alors plus `.......`.
-On peut ainsi changer l'aspect visuel de sont application sans pour autant impacter le `.......`.
+Le pattern MVP, vise à découper le modèle, de la vue et du contrôleur afin de rendre le code plus organisé.
+Les responsabilités ne sont alors plus gérée toutes au même endroit du code.
+On peut ainsi changer l'aspect visuel de son application sans pour autant impacter le modèle ou le controleur.
 
 3. Expliquer dans quels cas on doit privilégier le pattern MVC.
+
+Le pattern MVC va être très utile lorsque les projets sont un peu complexes et comportent de nombreux fichiers. Il va permettre de faciliter la maintenance et les évolutions du projet, en effet il permet de modifier le traitement des données par exemple dans le contrôleur sans impacter la partie vue du projet. 
 
 ## A faire (obligatoire)
 
