@@ -32,11 +32,11 @@ export class Model {
           for (let j = 0; j < this.width; j++) {
             const nbAlive = this.aliveNeighbours(i, j);
             // TODO implement Game of life logic
-            if(this.isCellAlive(x,y) === 0 && (nbAlive !== 2 || nbAlive !==3)){
-              this.state[y][x] = CELL_STATES.DEAD;
+            if(this.isCellAlive(i,j) === 0 && (nbAlive !== 2 || nbAlive !==3)){
+              this.state[j][i] = CELL_STATES.DEAD;
             }
-            if(this.isCellAlive(x,y) === 1 && nbAlive === 3){
-              this.state[y][x] = CELL_STATES.ALIVE;
+            if(this.isCellAlive(i,j) === 1 && nbAlive === 3){
+              this.state[j][i] = CELL_STATES.ALIVE;
             }
           }
         }
