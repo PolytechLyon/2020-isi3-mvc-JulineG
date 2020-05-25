@@ -6,6 +6,15 @@ import { controller } from "./gameOfLife/controller.js";
 initView();
 
 const model = new Model();
+model.addObserver(drawGame);
 model.init();
-drawGame(model);
-controller(model);
+
+document.getElementById("start").onclick = function() {
+    controller(model);
+};
+document.getElementById("stop").onclick = function() {
+    model.stop();
+};
+document.getElementById("reset").onclick = function() {
+    model.reset();
+};
